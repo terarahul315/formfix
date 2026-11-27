@@ -11,8 +11,8 @@
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
-    <script type="application/ld+json">
-{
+  <script type="application/ld+json">
+  {
     "@context": "https://schema.org",
     "@graph": [
       {
@@ -214,48 +214,48 @@
       </div>
 
       <div class="tools-grid">
-        <button type="button" class="feature-card" onclick="activatePreset('photo', 413, 531, 50, 'image/jpeg')">
+        <a href="#tools" class="feature-card" onclick="event.preventDefault(); activatePreset('photo', 413, 531, 50, 'image/jpeg')">
           <span class="feature-icon">📸</span>
-          <h3>Photo Resizer</h3>
-          <p>Passport &amp; exam size (413×531 px, 20–50 KB).</p>
-        </button>
+          <span class="feature-title">Photo Resizer</span>
+          <span class="feature-desc">Passport &amp; exam size (413×531 px, 20–50 KB).</span>
+        </a>
 
-        <button type="button" class="feature-card" onclick="activatePreset('signature', 300, 120, 20, 'image/jpeg')">
+        <a href="#tools" class="feature-card" onclick="event.preventDefault(); activatePreset('signature', 300, 120, 20, 'image/jpeg')">
           <span class="feature-icon">✍️</span>
-          <h3>Signature Resizer</h3>
-          <p>Prepare crisp 10–20 KB signatures for forms.</p>
-        </button>
+          <span class="feature-title">Signature Resizer</span>
+          <span class="feature-desc">Prepare crisp 10–20 KB signatures for forms.</span>
+        </a>
 
-        <button type="button" class="feature-card" onclick="activatePreset('sheet', 1800, 1200, 450, 'image/jpeg')">
+        <a href="#tools" class="feature-card" onclick="event.preventDefault(); activatePreset('sheet', 1800, 1200, 450, 'image/jpeg')">
           <span class="feature-icon">🖨️</span>
-          <h3>4×6 Print Sheet</h3>
-          <p>Arrange 6 passport photos on a 300 DPI sheet.</p>
-        </button>
+          <span class="feature-title">4×6 Print Sheet</span>
+          <span class="feature-desc">Arrange 6 passport photos on a 300 DPI sheet.</span>
+        </a>
 
-        <button type="button" class="feature-card" onclick="activatePreset('pdf', 1240, 1754, 200, 'image/jpeg')">
+        <a href="#tools" class="feature-card" onclick="event.preventDefault(); activatePreset('pdf', 1240, 1754, 200, 'image/jpeg')">
           <span class="feature-icon">📄</span>
-          <h3>Image to PDF</h3>
-          <p>Convert marksheets/IDs into compressed PDFs.</p>
-        </button>
+          <span class="feature-title">Image to PDF</span>
+          <span class="feature-desc">Convert marksheets/IDs into compressed PDFs.</span>
+        </a>
 
-        <button type="button" class="feature-card" onclick="activatePreset('photo', 413, 531, 40, 'image/jpeg', true)">
+        <a href="#tools" class="feature-card" onclick="event.preventDefault(); activatePreset('photo', 413, 531, 40, 'image/jpeg', true)">
           <span class="feature-icon">🎓</span>
-          <h3>Exam &amp; Agniveer Slate</h3>
-          <p>Add Name &amp; Date of Photo strip for exams.</p>
-        </button>
+          <span class="feature-title">Exam &amp; Agniveer Slate</span>
+          <span class="feature-desc">Add Name &amp; Date of Photo strip for exams.</span>
+        </a>
 
-        <button type="button" class="feature-card" onclick="activatePreset('photo', '', '', 100, 'image/webp')">
+        <a href="#tools" class="feature-card" onclick="event.preventDefault(); activatePreset('photo', '', '', 100, 'image/webp')">
           <span class="feature-icon">🔄</span>
-          <h3>Image Converter</h3>
-          <p>Convert between JPG, PNG and WebP offline.</p>
-        </button>
+          <span class="feature-title">Image Converter</span>
+          <span class="feature-desc">Convert between JPG, PNG and WebP offline.</span>
+        </a>
       </div>
     </section>
 
     <!-- ADVERTISEMENT SPACE -->
     <section class="main-tool" style="padding: 10px 7%;" aria-label="Advertisement">
       <div class="tool-card" style="text-align: center; min-height: 100px;">
-        <script async fetchpriority="high" data-cfasync="false" src="https://bauval.org/21/e43c468d4d0cf0301e23d3f83ef463e6"></script>
+        <script async data-cfasync="false" src="https://bauval.org/21/e43c468d4d0cf0301e23d3f83ef463e6"></script>
         <div id="container-e43c468d4d0cf0301e23d3f83ef463e6"></div>
       </div>
     </section>
@@ -317,28 +317,28 @@
       <div class="mega-directory">
         <div class="dir-col">
           <h4>Image Tools</h4>
-          <a href="#tools" onclick="activatePreset('photo', 413, 531, 50, 'image/jpeg')">Photo Resizer (50KB)</a>
-          <a href="#tools" onclick="activatePreset('photo', 413, 531, 20, 'image/jpeg')">Compress to 20KB</a>
-          <a href="#tools" onclick="activatePreset('signature', 300, 120, 20, 'image/jpeg')">Signature Resizer</a>
-          <a href="#tools" onclick="activatePreset('photo', 413, 531, 40, 'image/jpeg', true)">Agniveer Name &amp; Date</a>
-          <a href="#tools" onclick="activatePreset('sheet', 1800, 1200, 450, 'image/jpeg')">4×6 Print Sheet</a>
+          <a href="#tools" onclick="event.preventDefault(); activatePreset('photo', 413, 531, 50, 'image/jpeg')">Photo Resizer (50KB)</a>
+          <a href="#tools" onclick="event.preventDefault(); activatePreset('photo', 413, 531, 20, 'image/jpeg')">Compress to 20KB</a>
+          <a href="#tools" onclick="event.preventDefault(); activatePreset('signature', 300, 120, 20, 'image/jpeg')">Signature Resizer</a>
+          <a href="#tools" onclick="event.preventDefault(); activatePreset('photo', 413, 531, 40, 'image/jpeg', true)">Agniveer Name &amp; Date</a>
+          <a href="#tools" onclick="event.preventDefault(); activatePreset('sheet', 1800, 1200, 450, 'image/jpeg')">4×6 Print Sheet</a>
         </div>
 
         <div class="dir-col">
           <h4>Convert &amp; Format</h4>
-          <a href="#tools" onclick="activatePreset('photo', '', '', 100, 'image/jpeg')">PNG to JPG</a>
-          <a href="#tools" onclick="activatePreset('photo', '', '', 200, 'image/png')">JPG to PNG</a>
-          <a href="#tools" onclick="activatePreset('photo', '', '', 80, 'image/webp')">Image to WebP</a>
-          <a href="#tools" onclick="activatePreset('photo', '', '', 100, 'image/jpeg')">WebP to JPG</a>
+          <a href="#tools" onclick="event.preventDefault(); activatePreset('photo', '', '', 100, 'image/jpeg')">PNG to JPG</a>
+          <a href="#tools" onclick="event.preventDefault(); activatePreset('photo', '', '', 200, 'image/png')">JPG to PNG</a>
+          <a href="#tools" onclick="event.preventDefault(); activatePreset('photo', '', '', 80, 'image/webp')">Image to WebP</a>
+          <a href="#tools" onclick="event.preventDefault(); activatePreset('photo', '', '', 100, 'image/jpeg')">WebP to JPG</a>
         </div>
 
         <div class="dir-col">
           <h4>PDF &amp; Exam Presets <span class="new-badge">NEW</span></h4>
-          <a href="#tools" onclick="activatePreset('pdf', 1240, 1754, 200, 'image/jpeg')">Image to PDF (200KB)</a>
-          <a href="#tools" onclick="activatePreset('pdf', 1240, 1754, 100, 'image/jpeg')">Compress PDF Doc (100KB)</a>
-          <a href="#tools" onclick="activatePreset('photo', 413, 531, 45, 'image/jpeg')">SSC CGL / CHSL Photo</a>
-          <a href="#tools" onclick="activatePreset('photo', 350, 350, 80, 'image/jpeg')">UPSC IAS Photo</a>
-          <a href="#tools" onclick="activatePreset('photo', 132, 170, 18, 'image/jpeg')">NSDL PAN Card (18KB)</a>
+          <a href="#tools" onclick="event.preventDefault(); activatePreset('pdf', 1240, 1754, 200, 'image/jpeg')">Image to PDF (200KB)</a>
+          <a href="#tools" onclick="event.preventDefault(); activatePreset('pdf', 1240, 1754, 100, 'image/jpeg')">Compress PDF Doc (100KB)</a>
+          <a href="#tools" onclick="event.preventDefault(); activatePreset('photo', 413, 531, 45, 'image/jpeg')">SSC CGL / CHSL Photo</a>
+          <a href="#tools" onclick="event.preventDefault(); activatePreset('photo', 350, 350, 80, 'image/jpeg')">UPSC IAS Photo</a>
+          <a href="#tools" onclick="event.preventDefault(); activatePreset('photo', 132, 170, 18, 'image/jpeg')">NSDL PAN Card (18KB)</a>
         </div>
 
         <div class="dir-col">
@@ -372,20 +372,20 @@
         <h2>Trusted Across Everyday Scenarios</h2>
       </div>
       <div class="tools-grid">
-        <div class="feature-card">
+        <div class="feature-card static">
           <span class="feature-icon">🎓</span>
-          <h3>Exam Aspirants</h3>
-          <p>"No more running to cyber cafes just to shrink a 2MB phone selfie down to 45KB with Name &amp; Date for SSC or Agniveer."</p>
+          <span class="feature-title">Exam Aspirants</span>
+          <span class="feature-desc">"No more running to cyber cafes just to shrink a 2MB phone selfie down to 45KB with Name &amp; Date for SSC or Agniveer."</span>
         </div>
-        <div class="feature-card">
+        <div class="feature-card static">
           <span class="feature-icon">🏪</span>
-          <h3>CSC &amp; Cyber Cafes</h3>
-          <p>"Instant 4×6 6-photo print sheets and 200KB PDF compression save time for every walk-in customer."</p>
+          <span class="feature-title">CSC &amp; Cyber Cafes</span>
+          <span class="feature-desc">"Instant 4×6 6-photo print sheets and 200KB PDF compression save time for every walk-in customer."</span>
         </div>
-        <div class="feature-card">
+        <div class="feature-card static">
           <span class="feature-icon">💼</span>
-          <h3>Working Professionals</h3>
-          <p>"Quickly convert PNG/WebP scans to JPG or compress PAN/Passport photos securely on the device."</p>
+          <span class="feature-title">Working Professionals</span>
+          <span class="feature-desc">"Quickly convert PNG/WebP scans to JPG or compress PAN/Passport photos securely on the device."</span>
         </div>
       </div>
     </section>
@@ -425,6 +425,7 @@
       <span class="privacy-icon">🔒</span>
       <h2>Your Privacy Matters</h2>
       <p>All image and PDF processing happens locally inside your browser. Your photos are never uploaded to any server.</p>
+      <p class="ad-disclosure"><small>Note: We display ads via third-party ad networks. These networks may use cookies or similar technologies to serve relevant ads. Your photos, signatures, and documents are never shared with them.</small></p>
     </section>
 
   </main>
@@ -449,4 +450,4 @@
 
   <script data-cfasync="false" src="https://bauval.org/14/abb6b5600c8b539414350c29572de0a1"></script>
 </body>
-</html>
+  </html>
