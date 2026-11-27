@@ -1,0 +1,8 @@
+# FormFix – Photo, Signature & PDF Resizer PWA
+
+> FormFix (https://formfix-461.pages.dev/) is a free, 100% client-side Progressive Web App (PWA) for resizing Indian exam photos (20KB–50KB), signatures (10KB–20KB), creating 4x6 passport print sheets (6 photos at 300 DPI), adding Agniveer/SSC Name & Date slates, converting formats (JPG/PNG/WebP), and converting document images to PDF directly in the browser with zero server upload.
+
+## Core Tools
+- [FormFix Resizer](https://formfix-461.pages.dev/): Photo Resizer, Signature Resizer, 4x6 Print Sheet, Image to PDF, Format Converter, and Agniveer Slate.
+- [Privacy Policy](https://formfix-461.pages.dev/privacy.html)
+- [Terms of Service](https://formfix-461.pages.dev/terms.html)
