@@ -230,6 +230,7 @@ function buildPdfFromJpeg(jpegBytes, imgW, imgH) {
 }
 
 /* PROCESS */
+let previewUrl = null;
 processBtn.addEventListener("click", processImage);
 
 async function processImage() {
@@ -242,7 +243,7 @@ async function processImage() {
   showStatus("Processing...");
 
   try {
-    const maxBytes = maxKB * 1024;
+    const maxBytes = currentMode === "pdf" ? Math.max(1024, maxKB * 1024 - 1200) : maxKB * 1024;
     let bestBlob = null, bestCanvas = null;
     const qualities = [0.94, 0.85, 0.75, 0.65, 0.55, 0.45, 0.35, 0.25, 0.15];
 
@@ -264,8 +265,10 @@ async function processImage() {
     }
 
     if (outputUrl) URL.revokeObjectURL(outputUrl);
+    if (previewUrl) URL.revokeObjectURL(previewUrl);
     outputUrl = URL.createObjectURL(finalBlob);
-    resultPreview.src = currentMode === "pdf" ? URL.createObjectURL(bestBlob) : outputUrl;
+    previewUrl = currentMode === "pdf" ? URL.createObjectURL(bestBlob) : null;
+    resultPreview.src = previewUrl || outputUrl;
     resultSize.textContent = formatBytes(finalBlob.size);
     resultDimensions.textContent = bestCanvas.width + " × " + bestCanvas.height + " px";
 
@@ -275,7 +278,7 @@ async function processImage() {
     downloadBtn.textContent = `Download ${ext.toUpperCase()}`;
     resultPanel.hidden = false;
 
-    showStatus(finalBlob.size <= maxBytes ? "Done! Ready to download." : "Done! Closest size reached: " + formatBytes(finalBlob.size));
+    showStatus(finalBlob.size <= maxKB * 1024 ? "Done! Ready to download." : "Done! Closest size reached: " + formatBytes(finalBlob.size));
   } catch (err) {
     showStatus(err.message || "Something went wrong.", true);
   } finally {
@@ -287,7 +290,11 @@ async function processImage() {
 function sendHelp(type) {
   const n = $("helpName")?.value.trim() || "User";
   const q = $("helpQuery")?.value.trim() || "";
-  if (!q) { showStatus("Please write your question in Help Desk first.", true); return; }
+  if (!q) {
+    alert("Please write your question or exam name first.");
+    $("helpQuery")?.focus();
+    return;
+  }
   const txt = `FormFix Help Desk\nName: ${n}\nQuery: ${q}`;
   if (type === "wa") window.open("https://wa.me/918934023097?text=" + encodeURIComponent(txt), "_blank", "noopener,noreferrer");
   else window.location.href = "mailto:rm6129306@gmail.com?subject=" + encodeURIComponent("FormFix Support") + "&body=" + encodeURIComponent(txt);
@@ -298,3 +305,4 @@ if ("serviceWorker" in navigator) {
 }
 
 showStatus("Upload an image to get started.");
+
