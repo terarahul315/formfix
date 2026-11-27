@@ -1,13 +1,24 @@
-# FormFix – Photo, Signature & PDF Resizer (PWA)
+<p align="center">
+  <img src="favicon.png" alt="FormFix Logo" width="88" />
+</p>
 
-> FormFix (https://formfix-in.pages.dev/) is a free, 100% client-side Progressive Web App (PWA) for resizing Indian exam photos (20KB–50KB), signatures (10KB–20KB), creating 4x6 passport print sheets (6 photos at 300 DPI), adding optional Agniveer/SSC Name & Date slates to photos, converting formats (JPG/PNG/WebP), and converting document images to PDF directly in the browser — your photos and documents are never uploaded to any server. (The site is ad-supported; third-party ad networks may use cookies.)
+<h1 align="center">FormFix — Photo, Signature &amp; PDF Resizer PWA</h1>
 
-## Core Tools
-- [FormFix Resizer](https://formfix-in.pages.dev/): Photo Resizer (with optional Agniveer/SSC Name & Date slate), Signature Resizer, 4x6 Print Sheet, Image to PDF, Format Converter.
-- [Privacy Policy](https://formfix-in.pages.dev/privacy.html)
-- [Terms of Service](https://formfix-in.pages.dev/terms.html)
+<p align="center">
+  Fast, 100% client-side Progressive Web App to resize exam photos (20KB–50KB), signatures (10KB–20KB), 4×6 print sheets, and PDFs directly in your browser.
+</p>
 
-## Tech
-- 100% client-side: HTML, CSS, vanilla JavaScript (Canvas API + custom PDF builder)
-- PWA: installable, offline-capable via service worker
-- No backend, no uploads, no login
+---
+
+## ✨ Features
+- **Exact KB Compression:** Resize photos and signatures to 10KB, 20KB, 50KB, 100KB, or 200KB locally.
+- **Agniveer / SSC Slate:** Print Candidate Name and Date of Photo cleanly at the bottom.
+- **4×6 Print Sheet (300 DPI):** Arrange 6 passport photos on a single printable sheet.
+- **Image to PDF:** Convert documents and marksheets to compressed PDFs with zero server upload.
+- **Format Converter:** Convert between JPG, PNG, and WebP offline.
+- **PWA Ready:** Installable on Android and Desktop via `manifest.json` and `sw.js`.
+
+## 👨‍💻 Author & Ecosystem
+Built by **Rahul Mishra** ([GitHub](https://github.com/terarahul315))
+- **IFSCPin:** https://ifscpin.pages.dev/
+- **ReelSave:** https://reelsave-rouge.vercel.app/
