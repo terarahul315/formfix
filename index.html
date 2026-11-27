@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#00a878">
+  <meta name="description" content="Resize photos and signatures to exact KB, prepare exam documents, create 4x6 print sheets and convert images to PDF with FormFix.">
+  <title>FormFix - Photo, Signature &amp; PDF Tools</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <a href="#" class="logo">
+      <span class="logo-icon">F</span>
+      <span>FormFix</span>
+    </a>
+
+    <nav class="navigation">
+      <a href="#tools">Tools</a>
+      <a href="#exam-tools">Features</a>
+      <a href="#support">Help</a>
+      <a href="#projects">Projects</a>
+    </nav>
+
+    <button id="themeToggle" class="theme-btn" type="button" aria-label="Toggle theme">◐</button>
+  </header>
+
+  <main>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <span class="hero-tag">SIMPLE • FAST • 100% PRIVATE</span>
+      <h1>Your Documents,<br><span>Perfectly Prepared.</span></h1>
+      <p>Resize photos, signatures and documents to your exact KB size. Built for exam forms and everyday needs.</p>
+      <a href="#tools" class="primary-btn">Explore Tools →</a>
+    </section>
+
+    <!-- MAIN RESIZER -->
+    <section class="main-tool" id="tools">
+      <div class="section-heading">
+        <span class="eyebrow">IMAGE TOOLKIT</span>
+        <h2>Photo, Signature &amp; PDF Resizer</h2>
+        <p>Prepare your image or document according to your portal specifications.</p>
+      </div>
+
+      <div class="tool-card">
+
+        <div class="mode-tabs">
+          <button class="mode-btn active" type="button" data-mode="photo">📸 Photo</button>
+          <button class="mode-btn" type="button" data-mode="signature">✍️ Signature</button>
+          <button class="mode-btn" type="button" data-mode="sheet">🖨️ 4×6 Sheet</button>
+          <button class="mode-btn" type="button" data-mode="pdf">📄 To PDF</button>
+        </div>
+
+        <!-- QUICK KB CHIPS -->
+        <div class="quick-kb-row">
+          <span>Quick KB:</span>
+          <button type="button" class="kb-chip" data-kb="10">10 KB</button>
+          <button type="button" class="kb-chip" data-kb="20">20 KB</button>
+          <button type="button" class="kb-chip" data-kb="50">50 KB</button>
+          <button type="button" class="kb-chip" data-kb="100">100 KB</button>
+          <button type="button" class="kb-chip" data-kb="200">200 KB</button>
+        </div>
+
+        <label for="imageInput" class="upload-area" id="uploadArea">
+          <span class="upload-icon">＋</span>
+          <strong id="uploadHeading">Upload Your Image</strong>
+          <span>JPG, PNG or WebP</span>
+          <span class="upload-hint">Tap to choose or drag &amp; drop from device</span>
+        </label>
+
+        <input type="file" id="imageInput" accept="image/jpeg,image/png,image/webp" hidden>
+
+        <div id="fileInfo" class="file-info" hidden>
+          <span id="fileName"></span>
+          <button id="removeImage" type="button">Remove</button>
+        </div>
+
+        <div class="settings">
+          <div class="field">
+            <label for="targetKB">Target file size (KB)</label>
+            <input type="number" id="targetKB" value="50" min="1" max="5000">
+          </div>
+
+          <div class="field" id="formatField">
+            <label for="outputFormat">Output format</label>
+            <select id="outputFormat">
+              <option value="image/jpeg">JPG</option>
+              <option value="image/png">PNG</option>
+              <option value="image/webp">WebP</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="imageWidth">Width (px)</label>
+            <input type="number" id="imageWidth" placeholder="Auto or e.g. 413">
+          </div>
+
+          <div class="field">
+            <label for="imageHeight">Height (px)</label>
+            <input type="number" id="imageHeight" placeholder="Auto or e.g. 531">
+          </div>
+
+          <div class="field full-field" id="slateFields">
+            <label>Optional: Print Name &amp; Date on Photo (SSC / Agniveer)</label>
+            <div class="slate-row">
+              <input type="text" id="photoName" placeholder="Candidate Name (optional)">
+              <input type="text" id="photoDate" placeholder="DOP: DD-MM-YYYY (optional)">
+            </div>
+          </div>
+        </div>
+
+        <button id="processBtn" class="primary-btn process-btn" type="button">Process Image</button>
+
+        <p id="statusMessage" class="status-message" aria-live="polite"></p>
+
+        <!-- RESULT -->
+        <div id="resultPanel" class="result-panel" hidden>
+          <h3>Your Processed Output</h3>
+          <img id="resultPreview" alt="Processed image preview">
+          <div class="result-details">
+            <p>File size: <strong id="resultSize">-</strong></p>
+            <p>Dimensions: <strong id="resultDimensions">-</strong></p>
+          </div>
+          <a id="downloadBtn" class="primary-btn" href="#" download>Download File</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WORKING FEATURE CARDS -->
+    <section class="extra-tools" id="exam-tools">
+      <div class="section-heading">
+        <span class="eyebrow">MORE FEATURES</span>
+        <h2>Everything You Need</h2>
+        <p>Tap any tool below to open it directly in the resizer.</p>
+      </div>
+
+      <div class="tools-grid">
+        <button type="button" class="feature-card" onclick="activatePreset('photo', 413, 531, 50, 'image/jpeg')">
+          <span class="feature-icon">📸</span>
+          <h3>Photo Resizer</h3>
+          <p>Passport &amp; exam size (413×531 px, 20–50 KB).</p>
+        </button>
+
+        <button type="button" class="feature-card" onclick="activatePreset('signature', 300, 120, 20, 'image/jpeg')">
+          <span class="feature-icon">✍️</span>
+          <h3>Signature Resizer</h3>
+          <p>Prepare crisp 10–20 KB signatures for forms.</p>
+        </button>
+
+        <button type="button" class="feature-card" onclick="activatePreset('sheet', 1800, 1200, 450, 'image/jpeg')">
+          <span class="feature-icon">🖨️</span>
+          <h3>4×6 Print Sheet</h3>
+          <p>Arrange 6 passport photos on a 300 DPI sheet.</p>
+        </button>
+
+        <button type="button" class="feature-card" onclick="activatePreset('pdf', 1240, 1754, 200, 'image/jpeg')">
+          <span class="feature-icon">📄</span>
+          <h3>Image to PDF</h3>
+          <p>Convert marksheets/IDs into compressed PDFs.</p>
+        </button>
+
+        <button type="button" class="feature-card" onclick="activatePreset('photo', 413, 531, 40, 'image/jpeg', true)">
+          <span class="feature-icon">🎓</span>
+          <h3>Exam &amp; Agniveer Slate</h3>
+          <p>Add Name &amp; Date of Photo strip for exams.</p>
+        </button>
+
+        <button type="button" class="feature-card" onclick="activatePreset('photo', '', '', 100, 'image/webp')">
+          <span class="feature-icon">🔄</span>
+          <h3>Image Converter</h3>
+          <p>Convert between JPG, PNG and WebP offline.</p>
+        </button>
+      </div>
+    </section>
+
+    <!-- CUSTOMER HELP DESK -->
+    <section class="main-tool" id="support" style="padding-top: 20px;">
+      <div class="section-heading">
+        <span class="eyebrow">CUSTOMER HELP DESK</span>
+        <h2>Need Help With a Form?</h2>
+        <p>Facing an upload error or want a specific exam preset? Reach out directly.</p>
+      </div>
+      <div class="tool-card">
+        <div class="settings" style="margin-top: 0;">
+          <div class="field">
+            <label for="helpName">Your Name</label>
+            <input type="text" id="helpName" placeholder="e.g. Rahul">
+          </div>
+          <div class="field">
+            <label for="helpQuery">Your Question / Exam Name</label>
+            <input type="text" id="helpQuery" placeholder="e.g. Need SSC photo help">
+          </div>
+        </div>
+        <div class="help-btns">
+          <button type="button" class="primary-btn" onclick="sendHelp('wa')">📲 WhatsApp Support</button>
+          <button type="button" class="secondary-btn" onclick="sendHelp('email')">✉️ Email Support</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- BIG ECOSYSTEM PROMO BANNER & 4-COLUMN DIRECTORY -->
+    <section class="main-tool" id="projects" style="padding-top: 20px;">
+      <div class="promo-banner">
+        <div class="promo-text">
+          <span class="eyebrow">BUILT BY FORMFIX TEAM</span>
+          <h2>Meet IFSCPin &amp; ReelSave — Our Free Daily Utilities</h2>
+          <p>Looking for a bank branch IFSC code, India Post Pincode, or want to save public Instagram Reels &amp; MP3 audio? Try our fast, zero-login tools right alongside FormFix.</p>
+          <div class="promo-btns">
+            <a href="https://ifscpin.pages.dev/" target="_blank" rel="noopener noreferrer" class="primary-btn">🏦 Try IFSCPin</a>
+            <a href="https://reelsave-rouge.vercel.app/" target="_blank" rel="noopener noreferrer" class="secondary-btn">🎬 Try ReelSave</a>
+          </div>
+        </div>
+        <div class="promo-visual">
+          <div class="mini-app-card">
+            <strong>🏦 IFSCPin</strong>
+            <small>1,500+ Banks • All India Pincodes</small>
+          </div>
+          <div class="mini-app-card">
+            <strong>🎬 ReelSave</strong>
+            <small>HD Reels • MP3 Audio • Stories</small>
+          </div>
+          <div class="mini-app-card">
+            <strong>📄 FormFix</strong>
+            <small>20KB/50KB Photo • 4×6 Sheet • PDF</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4-COLUMN WORKING DIRECTORY -->
+      <div class="mega-directory">
+        <div class="dir-col">
+          <h4>Image Tools</h4>
+          <a href="#tools" onclick="activatePreset('photo', 413, 531, 50, 'image/jpeg')">Photo Resizer (50KB)</a>
+          <a href="#tools" onclick="activatePreset('photo', 413, 531, 20, 'image/jpeg')">Compress to 20KB</a>
+          <a href="#tools" onclick="activatePreset('signature', 300, 120, 20, 'image/jpeg')">Signature Resizer</a>
+          <a href="#tools" onclick="activatePreset('photo', 413, 531, 40, 'image/jpeg', true)">Agniveer Name &amp; Date</a>
+          <a href="#tools" onclick="activatePreset('sheet', 1800, 1200, 450, 'image/jpeg')">4×6 Print Sheet</a>
+        </div>
+
+        <div class="dir-col">
+          <h4>Convert &amp; Format</h4>
+          <a href="#tools" onclick="activatePreset('photo', '', '', 100, 'image/jpeg')">PNG to JPG</a>
+          <a href="#tools" onclick="activatePreset('photo', '', '', 200, 'image/png')">JPG to PNG</a>
+          <a href="#tools" onclick="activatePreset('photo', '', '', 80, 'image/webp')">Image to WebP</a>
+          <a href="#tools" onclick="activatePreset('photo', '', '', 100, 'image/jpeg')">WebP to JPG</a>
+        </div>
+
+        <div class="dir-col">
+          <h4>PDF &amp; Exam Presets <span class="new-badge">NEW</span></h4>
+          <a href="#tools" onclick="activatePreset('pdf', 1240, 1754, 200, 'image/jpeg')">Image to PDF (200KB)</a>
+          <a href="#tools" onclick="activatePreset('pdf', 1240, 1754, 100, 'image/jpeg')">Compress PDF Doc (100KB)</a>
+          <a href="#tools" onclick="activatePreset('photo', 413, 531, 45, 'image/jpeg')">SSC CGL / CHSL Photo</a>
+          <a href="#tools" onclick="activatePreset('photo', 350, 350, 80, 'image/jpeg')">UPSC IAS Photo</a>
+          <a href="#tools" onclick="activatePreset('photo', 132, 170, 18, 'image/jpeg')">NSDL PAN Card (18KB)</a>
+        </div>
+
+        <div class="dir-col">
+          <h4>Our Other Apps <span class="new-badge">FREE</span></h4>
+          <a href="https://ifscpin.pages.dev/" target="_blank" rel="noopener noreferrer">IFSCPin — Bank IFSC</a>
+          <a href="https://ifscpin.pages.dev/pincode-finder-india.html" target="_blank" rel="noopener noreferrer">India Post Pincode</a>
+          <a href="https://reelsave-rouge.vercel.app/" target="_blank" rel="noopener noreferrer">ReelSave — Reels Saver</a>
+          <a href="https://reelsave-rouge.vercel.app/instagram-audio-downloader.html" target="_blank" rel="noopener noreferrer">Instagram MP3 Audio</a>
+          <a href="#support">Customer Help Desk</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRIVACY -->
+    <section class="privacy-section">
+      <span class="privacy-icon">🔒</span>
+      <h2>Your Privacy Matters</h2>
+      <p>All image and PDF processing happens locally inside your browser. Your photos are never uploaded to any server.</p>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <a href="#" class="logo">
+      <span class="logo-icon">F</span>
+      <span>FormFix</span>
+    </a>
+    <p>Simple tools. Better documents.</p>
+    <div class="footer-links">
+      <a href="#tools">Tools</a>
+      <a href="#exam-tools">Features</a>
+      <a href="#support">Help Desk</a>
+      <a href="#projects">Our Projects</a>
+    </div>
+    <p class="copyright">© 2026 FormFix. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
