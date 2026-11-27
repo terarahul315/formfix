@@ -1,4 +1,4 @@
-const CACHE_NAME = "formfix-v2";
+const CACHE_NAME = "formfix-v3";
 const ASSETS = [
   "/index.html",
   "/style.css",
