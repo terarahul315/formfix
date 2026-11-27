@@ -1,5 +1,37 @@
+# FormFix — https://formfix-in.pages.dev/
+# Last updated: 2026-11-28
+
 User-agent: *
 Allow: /
 
-Sitemap: https://formfix-in.pages.dev/sitemap.xml
+# AI crawlers (llms.txt ke saath)
+User-agent: GPTBot
+Allow: /
 
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Google Ads
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
+# Sitemap
+Sitemap: https://formfix-in.pages.dev/sitemap.xml
