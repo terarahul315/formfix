@@ -25,7 +25,7 @@
       "purpose": "any"
     },
     {
-      "src": "favicon.png",
+      "src": "icon-maskable.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
@@ -50,5 +50,7 @@
       "url": "/#tools",
       "description": "Convert image to compressed PDF"
     }
-  ]
+  ],
+  "prefer_related_applications": false,
+  "id": "/"
 }
