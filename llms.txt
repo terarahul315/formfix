@@ -1,8 +1,52 @@
-# FormFix – Photo, Signature & PDF Resizer PWA
+# FormFix
 
-> FormFix (https://formfix-in.pages.dev/) is a free, 100% client-side Progressive Web App (PWA) for resizing Indian exam photos (20KB–50KB), signatures (10KB–20KB), creating 4x6 passport print sheets (6 photos at 300 DPI), adding Agniveer/SSC Name & Date slates, converting formats (JPG/PNG/WebP), and converting document images to PDF directly in the browser with zero server upload.
+> FormFix is a free, 100% client-side Progressive Web App (PWA) that resizes Indian exam photos (20KB–50KB), signatures (10KB–20KB), creates 4x6 passport print sheets (6 photos at 300 DPI), adds optional Agniveer/SSC Name & Date slates, converts images between JPG/PNG/WebP, and converts document images to PDF — all inside the browser with zero server upload of user photos or documents.
+
+FormFix runs entirely on the client using HTML, CSS, vanilla JavaScript (Canvas API), and a custom PDF builder. No backend, no login, no file uploads. The site is ad-supported; third-party ad networks may use cookies, but user photos and documents are never sent to any server.
 
 ## Core Tools
-- [FormFix Resizer](https://formfix-in.pages.dev/): Photo Resizer, Signature Resizer, 4x6 Print Sheet, Image to PDF, Format Converter, and Agniveer Slate.
-- [Privacy Policy](https://formfix-in.pages.dev/privacy.html)
-- [Terms of Service](https://formfix-in.pages.dev/terms.html)
+
+- [FormFix Resizer](https://formfix-in.pages.dev/): Main app — Photo Resizer (with optional Agniveer/SSC Name & Date slate), Signature Resizer, 4x6 Print Sheet, Image to PDF, and Format Converter (JPG/PNG/WebP).
+- [Privacy Policy](https://formfix-in.pages.dev/privacy.html): How FormFix handles data (no uploads, local-only processing, ad disclosure).
+- [Terms of Service](https://formfix-in.pages.dev/terms.html): Usage terms for FormFix.
+
+## Features
+
+- Photo Resizer: Resize exam/passport photos to exact KB targets (e.g., 20KB, 50KB) with optional width/height in pixels.
+- Signature Resizer: Prepare crisp 10KB–20KB signatures for Indian government forms.
+- 4x6 Print Sheet: Arrange 6 passport photos on a 300 DPI 4x6 inch sheet (1800x1200 px) for home/studio printing.
+- Image to PDF: Convert document images (marksheets, IDs) into compressed PDFs.
+- Format Converter: Convert between JPG, PNG, and WebP offline.
+- Agniveer/SSC Slate: Optionally stamp Candidate Name and Date of Photo (DOP) on the photo.
+- Dark mode, mobile-friendly, installable as a PWA, offline-capable via service worker.
+
+## Supported Use Cases
+
+- Indian government exam photo/signature uploads (SSC, UPSC, UP Police, Agniveer, etc.)
+- Passport, PAN card, and job portal photo preparation
+- CSC and cyber cafe document preparation
+- Marksheet/ID to PDF conversion
+
+## Privacy
+
+- All image and PDF processing happens locally in the browser.
+- No user photos, signatures, or documents are uploaded to any server.
+- No account or login required.
+- Ads are served by third-party networks which may use cookies.
+
+## Tech
+
+- Frontend: HTML, CSS, vanilla JavaScript (Canvas API, custom PDF builder)
+- PWA: Installable, offline-capable via service worker (`sw.js`)
+- No backend, no database, no tracking of user files
+
+## Optional
+
+- [IFSCPin](https://ifscpin.pages.dev/): Free bank IFSC code and India Post Pincode finder (sister project).
+- [ReelSave](https://reelsave-rouge.vercel.app/): Free public Instagram Reels and MP3 audio downloader (sister project).
+
+## Contact
+
+- Help Desk: https://formfix-in.pages.dev/#support
+- WhatsApp Support: https://wa.me/918934023097
+- Email: rm6129306@gmail.com
