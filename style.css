@@ -827,3 +827,49 @@ button.feature-card { text-align: left; width: 100%; }
 @media (max-width: 480px) {
   .mega-directory { grid-template-columns: 1fr; }
 }
+/* PAIN POINTS, ABOUT & FAQ */
+.pain-grid {
+  max-width: 920px;
+  margin: 0 auto 26px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  text-align: left;
+}
+.pain-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-size: 13px;
+  color: var(--muted);
+  box-shadow: var(--shadow);
+}
+.pain-item strong { color: var(--text); }
+
+.about-card p { color: var(--muted); font-size: 15px; margin-bottom: 12px; }
+.about-card p:last-child { margin-bottom: 0; }
+
+.faq-wrap { display: flex; flex-direction: column; gap: 12px; }
+.faq-box {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  background: var(--background);
+}
+.faq-box summary {
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  color: var(--text);
+}
+.faq-box p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+@media (max-width: 760px) {
+  .pain-grid { grid-template-columns: 1fr; }
+}
+
