@@ -3,16 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#00a878">
+  <meta name="description" content="Learn about FormFix, a free 100% on-device tool for Indian exam photo resizing, signature preparation, and PDF conversion. Built for students, applicants, and CSC centers.">
   <title>About Us - FormFix</title>
-  <link rel="stylesheet" href="style.css">
+  
+  <!-- Icons & PWA Setup -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
   <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- CSS & JS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- HEADER -->
   <header class="header">
     <a href="/" class="logo">
       <span class="logo-icon">F</span>
       <span>FormFix</span>
     </a>
+
+    <nav class="navigation">
+      <a href="/#tools">Tools</a>
+      <a href="/#exam-tools">Features</a>
+      <a href="/#support">Help</a>
+      <a href="/#projects">Projects</a>
+    </nav>
+
+    <button id="themeToggle" class="theme-btn" type="button" aria-label="Toggle theme">◐</button>
   </header>
 
   <main class="main-tool" style="max-width: 800px; margin: 40px auto; padding: 0 5%;">
@@ -29,12 +50,50 @@
       <p>To make form-filling effortless for every Indian student, applicant, and CSC center — free of cost, free of clutter, and free of privacy risks.</p>
 
       <h3>Our Tools</h3>
-      <p>We offer Photo Resizing (with Agniveer/SSC Name & Date slate), Signature Resizing, 4x6 Print Sheet generation, Image to PDF conversion, and format conversion (JPG/PNG/WebP).</p>
+      <p>We offer Photo Resizing (with optional Agniveer/SSC Name & Date slate), Signature Resizing, 4x6 Print Sheet generation, Image to PDF conversion, and format conversion (JPG/PNG/WebP).</p>
+
+      <h3>Our Other Apps</h3>
+      <p>We also build free daily utilities: <a href="https://ifscpin.pages.dev/" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600;">IFSCPin</a> (Bank IFSC & Pincode finder) and <a href="https://reelsave-rouge.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600;">ReelSave</a> (Instagram Reels & MP3 downloader).</p>
 
       <p>If you have any feedback or need help, reach out to us via the Help Desk on the homepage.</p>
 
-      <p><a href="/" class="primary-btn">← Back to FormFix</a></p>
+      <p style="margin-top: 25px;">
+        <a href="/" class="primary-btn">← Back to FormFix</a>
+      </p>
     </div>
   </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" style="margin-top: 40px;">
+    <a href="/" class="logo">
+      <span class="logo-icon">F</span>
+      <span>FormFix</span>
+    </a>
+    <p>Simple tools. Better documents.</p>
+    <div class="footer-links">
+      <a href="/#tools">Tools</a>
+      <a href="/#exam-tools">Features</a>
+      <a href="/#support">Help Desk</a>
+      <a href="/#projects">Our Projects</a>
+      <a href="about.html">About Us</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+    <p class="copyright">© 2026 FormFix. All rights reserved.</p>
+  </footer>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    try {
+      if (localStorage.getItem("formfix-theme") === "dark") document.body.classList.add("dark");
+    } catch {}
+    document.getElementById("themeToggle").addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      try {
+        localStorage.setItem("formfix-theme", document.body.classList.contains("dark") ? "dark" : "light");
+      } catch {}
+    });
+  </script>
+
 </body>
 </html>
