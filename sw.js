@@ -1,12 +1,19 @@
-const CACHE_NAME = "formfix-v3";
+const CACHE_NAME = "formfix-v4";
 const ASSETS = [
   "/index.html",
   "/style.css",
   "/script.js",
   "/manifest.json",
   "/favicon.png",
+  "/icon-maskable.png",
+  "/about.html",
   "/privacy.html",
-  "/terms.html"
+  "/terms.html",
+  "/ssc-photo-size-2026.html",
+  "/agniveer-photo-guide.html",
+  "/pan-card-photo-18kb.html",
+  "/4x6-print-sheet-guide.html",
+  "/signature-20kb-guide.html"
 ];
 
 /* INSTALL: precache — har file alag, ek fail ho toh baaki na ruke */
